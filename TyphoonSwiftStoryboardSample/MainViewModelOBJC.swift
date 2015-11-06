@@ -1,16 +1,16 @@
 //
-//  MainViewModel.swift
+//  MainViewModelOBJC.swift
 //  TyphoonSwiftStoryboardSample
 //
-//  Created by Alexander Tkachenko on 10/30/15.
+//  Created by Alexander Tkachenko on 11/6/15.
 //  Copyright © 2015 organization. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class MainViewModel: NSObject, MainViewModelProtocol {
-    var titleText:String
-    var descriptionText:String
+class MainViewModelOBJC : MainViewModelObjcProtocol {
+    @objc var titleText:String
+    @objc var descriptionText:String
     
     init(title:String, description:String) {
         self.titleText = title

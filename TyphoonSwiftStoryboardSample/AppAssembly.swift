@@ -21,7 +21,13 @@ public class AppAssembly: TyphoonAssembly {
     public dynamic func mainViewController() -> AnyObject {
         return TyphoonDefinition.withClass(MainViewController.self) {
             (definition) in
-            definition.injectProperty("mainViewModel", with: self.mainViewModel())
+
+            definition.injectProperty("mainViewModel", with:MainViewModel(title: "Hello typhoon", description: "hello swift, injected by class"))
+            definition.injectProperty("mainViewModelByProtocol", with:MainViewModel(title: "Hello typhoon", description: "hello swift, injected by protocol"))
+            definition.injectProperty("mainViewModelByObjcProtocol", with:MainViewModelOBJC(title: "Hello typhoon", description: "hello swift, injected by OBJC protocol"))
+            
+            definition.injectProperty("x", with: NSNumber.init(int: 3));
+            definition.injectProperty("favoriteGenres", with: ["Rock", "Classical", "Hip hop"])
         }
     }
 
